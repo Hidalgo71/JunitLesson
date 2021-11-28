@@ -1,15 +1,18 @@
 package com.junitlessontest;
-
 import org.junit.Assert;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
+//@TestMethodOrder(MethodOrder.OrderAnnotation.class)
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+
 public class Junit5Assertion extends Junit5Base
 {
     @Test
+    @Order(1)
+    @Tag("Equal")
     public void assertEqualsTest()
     {
         String str1 = "Test1";
